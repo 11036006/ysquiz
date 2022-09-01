@@ -1,19 +1,29 @@
-import React from "react"
+import React,{useEffect} from "react"
 import './Home.css'
-import Appbar from "../../components/Appbar/Appbar/Appbar";
-
-
+import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 function Home() {
+    const navigate = useNavigate()
 
+    const quiz = ()=>{
+        navigate('/quiz01')
+    }
+    useEffect(()=>{
+        if(!localStorage.getItem('verify')){
+            navigate('/')
+        }
+    })   
     return (
         <>
-            <Appbar />
-
             <div className="body">
-                <h1> </h1>
-              
-           
-                <button type="button" class="btn btn-primary">Primary</button>
+            <div className="HomeMain">
+            
+                <img src="https://i.imgur.com/CH0FTIU.png" alt="照片" className="img"></img>   
+                <br />
+                <Button variant="contained" className="btn" onClick={quiz}>開始測驗</Button>
+
+
+            </div>
             </div>
 
         </>
