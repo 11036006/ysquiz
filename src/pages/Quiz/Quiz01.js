@@ -77,29 +77,29 @@ function Quiz01() {
     }
 
         const save = () => {
-            localStorage.setItem('a', a01Total);
-            localStorage.setItem('b', b01Total);
-            localStorage.setItem('c', c01Total);
-            localStorage.setItem('d', d01Total);
-            localStorage.setItem('e', e01Total);
-            localStorage.setItem('f', f01Total);
-            localStorage.setItem('g', g01Total);
-            localStorage.setItem('router', 'quiz02')
+            sessionStorage.setItem('a', a01Total);
+            sessionStorage.setItem('b', b01Total);
+            sessionStorage.setItem('c', c01Total);
+            sessionStorage.setItem('d', d01Total);
+            sessionStorage.setItem('e', e01Total);
+            sessionStorage.setItem('f', f01Total);
+            sessionStorage.setItem('g', g01Total);
+            sessionStorage.setItem('router', 'quiz02')
             navigate('/quiz02')
 
         }
 
 
         useEffect(() => {
-            if (localStorage.getItem('router') === 'quiz03') {
+            if (sessionStorage.getItem('router') === 'quiz03') {
                 navigate('/quiz03')
             }
        
             
-            if (localStorage.getItem('router') === 'quiz02') {
+            if (sessionStorage.getItem('router') === 'quiz02') {
                 navigate('/quiz02')
             }
-            if (!localStorage.getItem('verify')) {
+            if (!sessionStorage.getItem('verify')) {
                 navigate('/')
             }
         })

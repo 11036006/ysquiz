@@ -9,7 +9,7 @@ function Home() {
         navigate('/quiz01')
     }
     useEffect(() => {
-        if (!localStorage.getItem('verify')) {
+        if (!sessionStorage.getItem('verify')) {
             navigate('/')
         }
     })

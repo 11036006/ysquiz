@@ -8,7 +8,7 @@ function Login() {
     const Login = () => {
         if (password === '0401') {
             navigate('/home')
-            localStorage.setItem('verify', '驗證通過');
+            sessionStorage.setItem('verify', '驗證通過');
 
         }
     }

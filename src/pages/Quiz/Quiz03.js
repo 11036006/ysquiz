@@ -79,35 +79,34 @@ function Quiz03() {
 
         const save = () => {
 
-            const a = localStorage.getItem('a')
+            const a = sessionStorage.getItem('a')
             const aTotal =Number(a)+Number(a03Total)
-            localStorage.setItem('a', aTotal);
-            const b = localStorage.getItem('b')
+            sessionStorage.setItem('a', aTotal);
+            const b = sessionStorage.getItem('b')
             const bTotal =Number(b)+Number(b03Total)
-            localStorage.setItem('b', bTotal);
-            const c = localStorage.getItem('c')
+            sessionStorage.setItem('b', bTotal);
+            const c = sessionStorage.getItem('c')
             const cTotal =Number(c)+Number(c03Total)
-            localStorage.setItem('c', cTotal);
-            const d = localStorage.getItem('d')
+            sessionStorage.setItem('c', cTotal);
+            const d = sessionStorage.getItem('d')
             const dTotal =Number(d)+Number(d03Total)
-            localStorage.setItem('d', dTotal);
-            const e = localStorage.getItem('e')
+            sessionStorage.setItem('d', dTotal);
+            const e = sessionStorage.getItem('e')
             const eTotal =Number(e)+Number(e03Total)
-            localStorage.setItem('e', eTotal);
-            const f = localStorage.getItem('f')
+            sessionStorage.setItem('e', eTotal);
+            const f = sessionStorage.getItem('f')
             const fTotal =Number(f)+Number(f03Total)
-            localStorage.setItem('f', fTotal);
-            const g= localStorage.getItem('g')
+            sessionStorage.setItem('f', fTotal);
+            const g= sessionStorage.getItem('g')
             const gTotal =Number(g)+Number(g03Total)
-            localStorage.setItem('g', gTotal);
+            sessionStorage.setItem('g', gTotal);
             navigate('/quizcomplete')
         }
 
 
         useEffect(() => {
-            
-       
-            if (!localStorage.getItem('verify')) {
+        
+            if (!sessionStorage.getItem('verify')) {
                 navigate('/')
             }
         })

@@ -20,8 +20,7 @@ function QuizCompleted() {
    
     const toatalMax = Math.max(...objArray.map(p => p.total))
     const retest = ()=>{
-
-        localStorage.clear()
+        sessionStorage.clear()
         window.location.reload()
     }
    
@@ -29,15 +28,15 @@ function QuizCompleted() {
     const navigate = useNavigate()
     useEffect(() => {
 
-        setA(localStorage.getItem('a'))
-        setB(localStorage.getItem('b'))
-        setC( localStorage.getItem('c'))
-        setD( localStorage.getItem('d'))
-        setE(localStorage.getItem('e'))
-        setF( localStorage.getItem('f'))
-        setG( localStorage.getItem('g'))
+        setA(sessionStorage.getItem('a'))
+        setB(sessionStorage.getItem('b'))
+        setC(sessionStorage.getItem('c'))
+        setD(sessionStorage.getItem('d'))
+        setE(sessionStorage.getItem('e'))
+        setF(sessionStorage.getItem('f'))
+        setG(sessionStorage.getItem('g'))
 
-        if (!localStorage.getItem('verify')) {
+        if (!sessionStorage.getItem('verify')) {
             navigate('/')
         }
     },)
