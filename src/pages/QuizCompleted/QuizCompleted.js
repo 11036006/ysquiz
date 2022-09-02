@@ -11,7 +11,6 @@ function QuizCompleted() {
     const [f,setF]= useState('')
     const [g,setG]= useState('')
    
- 
     const objArray = [ { "id": 1, "name": '高貴優雅', 'total': a },{ "id": 2,  "name": '傳統經典', 'total': b },
     { "id": 3,  "name": '運動休閒', 'total': c },
     { "id": 4,  "name": '復古浪漫', 'total': d },

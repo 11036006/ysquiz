@@ -13,7 +13,7 @@ function Quiz02() {
     const [b02Total, setB02Total] = useState(0)
     const [c02] = useState([{ no: "工程製造業" }, { no: "攝影" }, { no: "學生" }, { no: "體育界" }, { no: "老師"}, { no: "休閒旅遊" }, { no: "技術人員" }, { no: "園藝人員" }, { no: "餐飲業" }, { no: "娛樂業" }, { no: "自由業" }])
     const [c02Total, setC02Total] = useState(0)
-    const [d02] = useState([{ no: "醫護" }, { no: "幼教" }, { no: "社會工作" }, { no: "心理諮商" }, { no: "營養保健" }, { no: "女性用品" }, { no: "兒童用品" }, { no: " 新娘禮服業" }, { no: "美容" }, { no: "媒姆" }, { no: "商品諮詢師" }])
+    const [d02] = useState([{ no: "醫護" }, { no: "幼教" }, { no: "社會工作" }, { no: "心理諮商" }, { no: "營養保健" }, { no: "女性用品" }, { no: "兒童用品" }, { no: " 新娘禮服業" }, { no: "美容" }, { no: "保母" }, { no: "商品諮詢師" }])
     const [d02Total, setD02Total] = useState(0)
     const [e02] = useState([{ no: "演藝界" }, { no: "舞蹈" }, { no: "模特兒" }, { no: "俱樂部經營" }, { no: "酒促人員" }, { no: "展場展示人員" }, { no: "檳榔西施" }, { no: "鋼管表演" }, { no: "酒吧服務" }, { no: "伴遊" }, { no: "花車表演" }])
     const [e02Total, setE02Total] = useState(0)
