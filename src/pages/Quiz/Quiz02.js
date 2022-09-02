@@ -11,7 +11,7 @@ function Quiz02() {
     const [a02Total, setA02Total] = useState(0)
     const [b02] = useState([{ no: "公務人員" }, { no: "管理階層" }, { no: "法律" }, { no: "政治" }, { no: "金融保險" }, { no: "顧問" }, { no: "觀光事業" }, { no: "不動產" }, { no: "新聞業" }, { no: "教育界" }, { no: "醫師" }])
     const [b02Total, setB02Total] = useState(0)
-    const [c02] = useState([{ no: "工程製造業" }, { no: "攝影" }, { no: "學生" }, { no: "體育界" }, { no: "老師"}, { no: "休閒旅遊" }, { no: "技術人員" }, { no: "園藝人員" }, { no: "餐飲業" }, { no: "娛樂業" }, { no: "自由業" }])
+    const [c02] = useState([{ no: "工程製造業" }, { no: "攝影" }, { no: "學生" }, { no: "體育界" }, { no: "老師" }, { no: "休閒旅遊" }, { no: "技術人員" }, { no: "園藝人員" }, { no: "餐飲業" }, { no: "娛樂業" }, { no: "自由業" }])
     const [c02Total, setC02Total] = useState(0)
     const [d02] = useState([{ no: "醫護" }, { no: "幼教" }, { no: "社會工作" }, { no: "心理諮商" }, { no: "營養保健" }, { no: "女性用品" }, { no: "兒童用品" }, { no: " 新娘禮服業" }, { no: "美容" }, { no: "保母" }, { no: "商品諮詢師" }])
     const [d02Total, setD02Total] = useState(0)
@@ -19,10 +19,8 @@ function Quiz02() {
     const [e02Total, setE02Total] = useState(0)
     const [f02] = useState([{ no: "廣告" }, { no: "公關" }, { no: "設計師" }, { no: "建築師" }, { no: "形象顧問" }, { no: "設計助理" }, { no: "藝術工作者" }, { no: "活動主持" }, { no: "演藝界" }, { no: "晚會主持" }, { no: "舞台表演" }])
     const [f02Total, setF02Total] = useState(0)
-    const [g02] = useState([{ no: "藝術" }, { no: "服裝" }, { no: "創意工作" }, { no: "造型" }, { no: "彩妝" }, { no: "演藝界" }, { no: "服裝銷售" }, { no: "形象顧問" }, { no:"宗教人士" }, { no: "藝術品銷售員" }, { no: "美甲人員" }])
+    const [g02] = useState([{ no: "藝術" }, { no: "服裝" }, { no: "創意工作" }, { no: "造型" }, { no: "彩妝" }, { no: "演藝界" }, { no: "服裝銷售" }, { no: "形象顧問" }, { no: "宗教人士" }, { no: "藝術品銷售員" }, { no: "美甲人員" }])
     const [g02Total, setG02Total] = useState(0)
-   
-
 
     const aCheck = (e) => {
         if (e === true) {
@@ -77,116 +75,114 @@ function Quiz02() {
         }
     }
 
-        const save = () => {
+    const save = () => {
 
-            const a = localStorage.getItem('a')
-            const aTotal =Number(a)+Number(a02Total)
-            localStorage.setItem('a', aTotal);
-            const b = localStorage.getItem('b')
-            const bTotal =Number(b)+Number(b02Total)
-            localStorage.setItem('b', bTotal);
-            const c = localStorage.getItem('c')
-            const cTotal =Number(c)+Number(c02Total)
-            localStorage.setItem('c', cTotal);
-            const d = localStorage.getItem('d')
-            const dTotal =Number(d)+Number(d02Total)
-            localStorage.setItem('d', dTotal);
-            const e = localStorage.getItem('e')
-            const eTotal =Number(e)+Number(e02Total)
-            localStorage.setItem('e', eTotal);
-            const f = localStorage.getItem('f')
-            const fTotal =Number(f)+Number(f02Total)
-            localStorage.setItem('f', fTotal);
-            const g= localStorage.getItem('g')
-            const gTotal =Number(g)+Number(g02Total)
-            localStorage.setItem('g', gTotal);
+        const a = localStorage.getItem('a')
+        const aTotal = Number(a) + Number(a02Total)
+        localStorage.setItem('a', aTotal);
+        const b = localStorage.getItem('b')
+        const bTotal = Number(b) + Number(b02Total)
+        localStorage.setItem('b', bTotal);
+        const c = localStorage.getItem('c')
+        const cTotal = Number(c) + Number(c02Total)
+        localStorage.setItem('c', cTotal);
+        const d = localStorage.getItem('d')
+        const dTotal = Number(d) + Number(d02Total)
+        localStorage.setItem('d', dTotal);
+        const e = localStorage.getItem('e')
+        const eTotal = Number(e) + Number(e02Total)
+        localStorage.setItem('e', eTotal);
+        const f = localStorage.getItem('f')
+        const fTotal = Number(f) + Number(f02Total)
+        localStorage.setItem('f', fTotal);
+        const g = localStorage.getItem('g')
+        const gTotal = Number(g) + Number(g02Total)
+        localStorage.setItem('g', gTotal);
 
-            localStorage.setItem('router', 'quiz03');
+        localStorage.setItem('router', 'quiz03');
+        navigate('/quiz03')
+    }
+    useEffect(() => {
+        if (localStorage.getItem('router') === 'quiz03') {
             navigate('/quiz03')
         }
 
 
-        useEffect(() => {
-            if (localStorage.getItem('router') === 'quiz03') {
-                navigate('/quiz03')
-            }
-         
-       
-            if (!localStorage.getItem('verify')) {
-                navigate('/')
-            }
-        })
+        if (!localStorage.getItem('verify')) {
+            navigate('/')
+        }
+    })
 
-        return (
-            <>
+    return (
+        <>
 
-                <div className="QuizMain">
+            <div className="QuizMain">
 
-                    <FormGroup className="card">
-                        {a02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => aCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <FormGroup className="card">
+                    {a02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => aCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {b02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => bCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {b02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => bCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {c02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => cCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {c02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => cCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {d02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => dCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {d02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => dCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {e02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => eCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {e02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => eCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {f02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => fCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {f02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => fCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <FormGroup className="card">
-                        {g02.map((item) => (
-                            <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => gCheck(e.target.checked)} />
-                        ))}
-                    </FormGroup>
+                <br />
+                <FormGroup className="card">
+                    {g02.map((item) => (
+                        <FormControlLabel control={<Checkbox />} label={item.no} onChange={(e) => gCheck(e.target.checked)} />
+                    ))}
+                </FormGroup>
 
 
-                    <br />
-                    <Button variant="contained" className="btn" onClick={save}>下一步</Button>
-                    <br/>
+                <br />
+                <Button variant="contained" className="btn" onClick={save}>下一步</Button>
+                <br />
 
 
-                </div>
+            </div>
 
-            </>
+        </>
 
-        );
-    }
+    );
+}
 
-    export default Quiz02
+export default Quiz02
